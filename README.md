@@ -8,7 +8,7 @@ Config Extras contains extensions to [Config][].
 Download
 --------
 
-Add a dependency to Config Extras:
+Add a Maven dependency to Config Extras:
 
     <dependency>
       <groupId>org.jvirtanen.config</groupId>
