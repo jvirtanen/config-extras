@@ -5,6 +5,7 @@ Config Extras contains extensions to [Config][].
 
   [Config]: https://github.com/typesafehub/config
 
+
 Download
 --------
 
@@ -15,6 +16,7 @@ Add a Maven dependency to Config Extras:
       <artifactId>config-extras</artifactId>
       <version><!-- latest version --></version>
     </dependency>
+
 
 License
 -------
