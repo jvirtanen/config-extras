@@ -13,11 +13,17 @@ Download
 
 Add a Maven dependency to Config Extras:
 
-    <dependency>
-      <groupId>org.jvirtanen.config</groupId>
-      <artifactId>config-extras</artifactId>
-      <version><!-- latest version --></version>
-    </dependency>
+```xml
+<dependency>
+  <groupId>org.jvirtanen.config</groupId>
+  <artifactId>config-extras</artifactId>
+  <version><!-- latest release --></version>
+</dependency>
+```
+
+See the [latest release][] on GitHub.
+
+  [latest release]: https://github.com/jvirtanen/config-extras/releases/latest
 
 
 License
