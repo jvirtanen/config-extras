@@ -1,5 +1,4 @@
-Config Extras
-=============
+# Config Extras
 
 Config Extras contains extensions to [Config][].
 
@@ -7,9 +6,7 @@ Config Extras contains extensions to [Config][].
 
 Config Extras requires Java Runtime Environment (JRE) 8 or newer.
 
-
-Download
---------
+## Download
 
 Add a Maven dependency to Config Extras:
 
@@ -25,9 +22,7 @@ See the [latest release][] on GitHub.
 
   [latest release]: https://github.com/jvirtanen/config-extras/releases/latest
 
-
-License
--------
+## License
 
 Copyright 2014 Jussi Virtanen.
 
