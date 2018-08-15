@@ -6,6 +6,12 @@ Config Extras contains extensions to [Config][].
 
 Config Extras requires Java Runtime Environment (JRE) 8 or newer.
 
+## Dependencies
+
+Config Extras depends on the following libraries:
+
+- Config 1.3.3
+
 ## Download
 
 Add a Maven dependency to Config Extras:
