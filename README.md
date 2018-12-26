@@ -2,7 +2,7 @@
 
 Config Extras contains extensions to [Config][].
 
-  [Config]: https://github.com/typesafehub/config
+  [Config]: https://github.com/lightbend/config
 
 Config Extras requires Java Runtime Environment (JRE) 8 or newer.
 
