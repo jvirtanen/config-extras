@@ -8,14 +8,9 @@ import com.typesafe.config.ConfigFactory;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ConfigsTest {
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
     @Test
     public void inetAddressByAddress() throws Exception {
@@ -35,27 +30,21 @@ public class ConfigsTest {
         assertEquals(address, Configs.getInetAddress(config, "server.address"));
     }
 
-    @Test
+    @Test(expected=ConfigException.Missing.class)
     public void missingInetAddress() throws Exception {
-        exception.expect(ConfigException.Missing.class);
-
         Configs.getInetAddress(config(""), "server.address");
     }
 
-    @Test
+    @Test(expected=ConfigException.WrongType.class)
     public void wrongTypeInetAddress() throws Exception {
         Config config = config("server.address = 127.0.0.1");
-
-        exception.expect(ConfigException.WrongType.class);
 
         Configs.getInetAddress(config, "server");
     }
 
-    @Test
+    @Test(expected=ConfigException.BadValue.class)
     public void badValueInetAddress() throws Exception {
         Config config = config("server.address = <none>");
-
-        exception.expect(ConfigException.BadValue.class);
 
         Configs.getInetAddress(config, "server.address");
     }
@@ -74,27 +63,21 @@ public class ConfigsTest {
         assertEquals(loopback(), Configs.getNetworkInterface(config, "server.network-interface"));
     }
 
-    @Test
+    @Test(expected=ConfigException.Missing.class)
     public void missingNetworkInterface() throws Exception {
-        exception.expect(ConfigException.Missing.class);
-
         Configs.getNetworkInterface(config(""), "server.network-interface");
     }
 
-    @Test
+    @Test(expected=ConfigException.WrongType.class)
     public void wrongTypeNetworkInterface() throws Exception {
         Config config = config("server.network-interface = " + loopback().getName());
-
-        exception.expect(ConfigException.WrongType.class);
 
         Configs.getNetworkInterface(config, "server");
     }
 
-    @Test
+    @Test(expected=ConfigException.BadValue.class)
     public void badValueNetworkInterface() throws Exception {
         Config config = config("server.network-interface = <none>");
-
-        exception.expect(ConfigException.BadValue.class);
 
         Configs.getNetworkInterface(config, "server.network-interface");
     }
@@ -106,27 +89,21 @@ public class ConfigsTest {
         assertEquals(4000, Configs.getPort(config, "server.port"));
     }
 
-    @Test
+    @Test(expected=ConfigException.Missing.class)
     public void missingPort() throws Exception {
-        exception.expect(ConfigException.Missing.class);
-
         Configs.getPort(config(""), "server.port");
     }
 
-    @Test
+    @Test(expected=ConfigException.WrongType.class)
     public void wrongTypePort() throws Exception {
         Config config = config("server.port = 4000");
-
-        exception.expect(ConfigException.WrongType.class);
 
         Configs.getPort(config, "server");
     }
 
-    @Test
+    @Test(expected=ConfigException.BadValue.class)
     public void badValuePort() throws Exception {
         Config config = config("server.port = -1");
-
-        exception.expect(ConfigException.BadValue.class);
 
         Configs.getPort(config, "server.port");
     }
