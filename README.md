@@ -1,3 +1,5 @@
+> :warning: This repository is **archived** and no further development will take place.
+
 # Config Extras
 
 Config Extras contains extensions to [Config][].
